@@ -1,0 +1,13 @@
+## Arrays
+
+1. Find the Largest Element in the Array and print (DONE)
+2. Find the frequency of even numbers and odd numbers in an Array (DONE)
+3. Search an Element in an Array (DONE)
+4. Move all zeros to the end (DONE)
+5. Find the Majority Element in an Array (DONE)
+
+### Practice
+
+6. Find 2 Numbers who's sum is the target (Two-Pointer Method) 
+    `(Array Size: 5, Array Elements: {1, 2, 3, 4, 6}, Target: 6)`
+7. Rotate the Array to right by `k` steps
