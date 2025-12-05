@@ -1,0 +1,67 @@
+package Day3;
+
+import java.util.Scanner;
+
+public class RowSumCalculator {
+
+    public static int RowSum(int rows, int cols, int[][] mat) {
+        System.out.println("\n--- Results ---");
+        int rowSum = 0;
+        for (int i = 0; i < rows; i++) {
+
+            for (int j = 0; j < cols; j++) {
+                rowSum += mat[i][j];
+            }
+
+            System.out.println("Sum of row " + (i + 1) + ": " + rowSum);
+            rowSum = 0;
+        }
+
+        return rowSum;
+    }
+
+    public static int[][] getArray(int a, int b) {
+        Scanner sc = new Scanner(System.in);
+        int[][] matrix = new int[a][b];
+
+        System.out.println("Enter the elements of the matrix:");
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                System.out.printf("Enter element at [%d][%d]: ", i, j);
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+        sc.close();
+        return matrix;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = sc.nextInt();
+
+        System.out.print("Enter the number of columns: ");
+        int cols = sc.nextInt();
+
+        int[][] arr = getArray(rows, cols);
+
+        int res = RowSum(rows, cols, arr);
+
+        sc.close();
+    }
+}
+
+/*
+ * for (int j = 0; j < cols; j++) {
+ * int sum = 0;
+ * 
+ * // Inner loop iterates through rows to add elements of the current column
+ * for (int i = 0; i < rows; i++) {
+ * sum += matrix[i][j];
+ * }
+ * 
+ * System.out.println("Sum of Column " + (j + 1) + ": " + sum);
+ * }
+ */

@@ -28,3 +28,13 @@ We can name 4 types of functions based on its params and return type:
 3. without `@param` and with `return type`
 4. without `@param` and without `return type`
 
+# 2D Arrays
+
+A 2D array is a data structure that stores elements in a `Grid` of _**Rows**_ and _**Columns**_
+
+Effectively: It is an `array` of `arrays`
+
+- `Structure`: A 2D array arranges data in a grid-like format with rows and columns.
+- `Access`: To access a specific element, you need two indices: _`arrayName[rowIndex][columnIndex]`_.
+- `Implementation`: It can be viewed as a list of one-dimensional arrays, where each inner array represents a row.
+- `Purpose`: It provides a structured way to handle tabular or matrix-like data, which is more efficient than using multiple separate 1D arrays for related data sets. 
