@@ -52,16 +52,3 @@ public class RowSumCalculator {
         sc.close();
     }
 }
-
-/*
- * for (int j = 0; j < cols; j++) {
- * int sum = 0;
- * 
- * // Inner loop iterates through rows to add elements of the current column
- * for (int i = 0; i < rows; i++) {
- * sum += matrix[i][j];
- * }
- * 
- * System.out.println("Sum of Column " + (j + 1) + ": " + sum);
- * }
- */
