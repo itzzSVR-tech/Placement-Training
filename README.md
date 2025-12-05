@@ -1,10 +1,10 @@
 ## Arrays
 
-1. Find the Largest Element in the Array and print (DONE)
-2. Find the frequency of even numbers and odd numbers in an Array (DONE)
-3. Search an Element in an Array (DONE)
-4. Move all zeros to the end (DONE)
-5. Find the Majority Element in an Array (DONE)
+1. Find the Largest Element in the Array and print 
+2. Find the frequency of even numbers and odd numbers in an Array 
+3. Search an Element in an Array 
+4. Move all zeros to the end 
+5. Find the Majority Element in an Array 
 
 ### Practice
 
@@ -22,3 +22,4 @@
 
 11. Get a String from the user and count the number of vowels in the string
 12. Palindrome
+13. Check whether the given strings are anagram or not
