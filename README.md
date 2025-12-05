@@ -11,3 +11,7 @@
 6. Find 2 Numbers who's sum is the target (Two-Pointer Method) 
     `(Array Size: 5, Array Elements: {1, 2, 3, 4, 6}, Target: 6)`
 7. Rotate the Array to right by `k` steps
+
+## Functions
+
+8. Reverse an Array without using second array and with the use of functions
