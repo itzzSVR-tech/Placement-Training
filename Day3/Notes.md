@@ -38,3 +38,8 @@ Effectively: It is an `array` of `arrays`
 - `Access`: To access a specific element, you need two indices: _`arrayName[rowIndex][columnIndex]`_.
 - `Implementation`: It can be viewed as a list of one-dimensional arrays, where each inner array represents a row.
 - `Purpose`: It provides a structured way to handle tabular or matrix-like data, which is more efficient than using multiple separate 1D arrays for related data sets. 
+
+# Strings
+
+A **`String`** is the type of object that can store a `sequence of characters` enclosed by double quotes("") and every character is stored in `16 bits`, i.e., using `UTF 16-bit encoding`
+

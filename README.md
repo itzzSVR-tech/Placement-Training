@@ -17,3 +17,8 @@
 8. Reverse an Array without using second array and with the use of functions
 9. Get the input as 2D array and find the sum of each row
 10. In a 2D Array, Add Elements in ZigZag pattern.
+
+## Strings
+
+11. Get a String from the user and count the number of vowels in the string
+12. Palindrome
