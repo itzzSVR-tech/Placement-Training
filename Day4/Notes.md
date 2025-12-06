@@ -41,3 +41,45 @@ The idea is to `represent` a `problem` in terms of `one or more smaller sub-prob
 - The recursive program has greater space requirements than the iterative program as all functions will remain in the stack until the base case is reached.
 - It also has greater time requirements because of function calls and returns overhead.
 
+# Classes and Objects
+
+Classes and Objects form the foundation of Object-Oriented Programming (OOP). They help model real-world entities and organize code in a structured way.
+
+A class is a blueprint used to create objects that share common properties and behavior.
+An object is an instance of a class. It represents a specific entity created from the class template.
+
+For Example, Dog is a class, Tommy is an object of that class.
+
+![classesObjects](https://media.geeksforgeeks.org/wp-content/uploads/20250805190315437489/Class_Object_example.webp)
+
+### Java Class
+
+A class is a blueprint that defines data and behavior for objects. It groups related fields and methods in a single unit. Memory for its members is allocated only when an object is created.
+
+- Acts as a template to create objects with shared structure.
+- Does not occupy memory for fields until instantiation.
+- Can contain fields, methods, constructors, nested classes and interfaces.
+
+```java
+class Student {
+    int id;
+    String name;
+
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() { return id; }
+    public String getName() { return n; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(10, "Alice");
+        System.out.println(s1.getId());
+        System.out.println(s1.getName());
+    }
+}
+```
+
