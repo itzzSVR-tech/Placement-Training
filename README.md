@@ -25,3 +25,9 @@
 13. Check whether the given strings are anagram or not
 14. Reverse a sentence and not the words in a String
 15. Remove Duplicates in a String and print the String without Duplicates
+
+## Recursion
+
+16. Factorial
+17. Fibonnaci Series
+18. Count Number of digits using recursion
