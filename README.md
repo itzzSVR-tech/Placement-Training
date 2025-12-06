@@ -23,3 +23,5 @@
 11. Get a String from the user and count the number of vowels in the string
 12. Palindrome
 13. Check whether the given strings are anagram or not
+14. Reverse a sentence and not the words in a String
+15. Remove Duplicates in a String and print the String without Duplicates
