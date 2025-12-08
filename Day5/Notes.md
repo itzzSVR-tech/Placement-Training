@@ -264,3 +264,7 @@ public class Main {
 
     - *Method Overriding*: A subclass provides a specific implementation for a method that is already defined in its superclass, accessed through a superclass reference. 
 
+
+# Interfaces
+
+An `interface` in Object-Oriented Programming (OOP) is a blueprint or contract that defines a set of method signatures a class must implement

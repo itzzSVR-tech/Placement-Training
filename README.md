@@ -38,3 +38,39 @@
 - [x] Instantiation
 - [x] Classes with Multiple Objects
 
+## OOPS
+
+| Project | Classes | Concepts | Methods |
+|:-------:|:-------:|:--------:|:-------:|
+- [ ] Student Management System [
+    Classes: 
+    Student, Course, Teacher
+    Concepts: 
+    Encapsulation, Constructor 
+    Methods: 
+    addStudent(), displayDetails(), searchByName()
+]
+- [ ] Library Management System [
+    Classes: 
+    Book, Memeber, Librarian
+    Concepts: 
+    Inheritance, Polymorphism 
+    Methods: 
+    issueBooks() or returnBooks(), checkAvailabilty(), 
+]
+- [ ] Bank Account System [
+    Classes: 
+    Account, SavingAccount, CurrentAccount
+    Concepts: 
+    Inheritance, Method Overriding 
+    Methods: 
+    deposit(), withdraw(), checkBalance()
+]
+- [ ] Online Shopping Cart [
+    Classes: 
+    Product, Cart, User
+    Concepts: 
+    Encapsulation 
+    Methods: 
+    addProductToCart(), calculateTotal()
+]
