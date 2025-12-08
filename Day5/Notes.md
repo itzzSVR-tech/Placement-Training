@@ -1,12 +1,14 @@
 # `this` Keyword
 
-The *`this`* keyword in Java is a reference to the current object within a class. There are 5 use cases for the `this` keyword
+The *`this`* keyword in Java is a reference to the current object within a class. There are 5 use cases for the `this` keyword:
 
 - Differentiating `instance` variables and `local` variables **(Shadowing)**
 - Invoking Current `class methods`
 - Invoking Current `class constructors` **(Constructor Chaining)**
 - Returning the Current `class instance`
 - To Pass `current object` as an `argument`
+
+![this](https://dotnettrickscloud.blob.core.windows.net/article/java/3720240903094845.webp)
 
 ### `Shadowing`
 
@@ -93,9 +95,28 @@ class MyClass {
 
 # Encapsulation
 
-*`Encapsulation`* in `OOP (Object-Oriented Programming)` is the practice of bundling data (attributes) and the methods that operate on that data into a single unit (a class) and restricting direct access to the internal components, often using `access modifiers/specifiers` like `private`.
+*`Encapsulation`* in `OOP (Object-Oriented Programming)` is the *practice of bundling data (attributes) and the methods that operate on that data into a single unit (a class)* and restricting direct access to the internal components, often using `access modifiers/specifiers` like `private`.
 
 ![Encapsule](https://ik.imagekit.io/upgrad1/abroad-images/imageCompo/images/__visual_selection_2025_05_29T190900_778TUVXYM.png?pr-true)
 
-Encapsulation
-: Binding data members and data methods with private accessing elements where only authorized objects can be accesed
+## How it works
+
+`Encapsulation` works by controlling the *visibility* and *accessibility* of a class's members using `access modifiers`. 
+
+- `Private`: Members declared as private are only accessible within the same class. This is used for sensitive data or internal logic that should not be exposed to the outside.
+
+- `Protected`: Members are accessible within the class itself and by its subclasses (derived classes).
+
+- `Public`: Members are accessible from anywhere in the program and form the external interface of the class. 
+
+To allow controlled interaction with private data, **public getter and setter methods** are typically provided. These methods act as intermediaries, allowing external code to `retrieve (get`) or `modify (set)` the data safely. Crucially, setter methods can include `validation logic` to ensure that only valid data is assigned, thereby maintaining `data integrity`.
+
+## Benefits
+
+- *`Data Hiding/Security`*: Protects an object's internal state from unauthorized access or modification, reducing the risk of errors or misuse.
+
+- *`Improved Maintainability`*: Changes to a class's internal implementation can be made without affecting the external code that uses the class, provided the public interface remains consistent.
+
+- *`Modularity and Reusability`*: Encapsulated classes are self-contained units with clearly defined interfaces, making them easier to understand, test, and reuse in different parts of a program or across projects.
+
+- *`Control and Flexibility`*: Provides fine-grained control over how data is accessed and modified, allowing for validation rules and read-only or write-only attributes. 
