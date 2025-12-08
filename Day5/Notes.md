@@ -62,3 +62,40 @@ class MyClass {
     }
 }
 ```
+
+### `Class Instances`
+
+*`this`* can be returned from a method, which is commonly used in `method chaining` or `builder patterns`.
+
+```java
+class MyClass {
+    int data;
+
+    MyClass setData(int data) {
+        this.data = data;
+        return this; 
+        // Returns the current object
+    }
+
+    void display() {
+        System.out.println(data);
+    }
+}
+
+// Usage:
+// MyClass obj = new MyClass();
+// obj.setData(10).display();
+```
+
+### `Current Object as Argument`
+
+*`this`* can be passed as an `argument` to a method or `constructor` of another class when the current object itself needs to be referenced.
+
+# Encapsulation
+
+*`Encapsulation`* in `OOP (Object-Oriented Programming)` is the practice of bundling data (attributes) and the methods that operate on that data into a single unit (a class) and restricting direct access to the internal components, often using `access modifiers/specifiers` like `private`.
+
+![Encapsule](https://ik.imagekit.io/upgrad1/abroad-images/imageCompo/images/__visual_selection_2025_05_29T190900_778TUVXYM.png?pr-true)
+
+Encapsulation
+: Binding data members and data methods with private accessing elements where only authorized objects can be accesed
