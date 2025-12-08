@@ -1,102 +1,139 @@
-// 1. Base Class: Account
-class Account { 
+import java.util.Scanner;
+
+// 1. Base Class
+class Account {
     protected String accountNumber;
     protected double balance;
 
-    // Constructor
     public Account(String accountNumber, double initialBalance) {
         this.accountNumber = accountNumber;
         this.balance = initialBalance;
     }
 
-    // Method: deposit()
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println(accountNumber + ": Deposited $" + amount);
+            System.out.println("Success! Deposited: $" + amount);
         } else {
-            System.out.println("Invalid deposit amount.");
+            System.out.println("Error: Deposit amount must be positive.");
         }
     }
 
-    // Method: withdraw() - This will be overridden in child classes
     public void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;
-            System.out.println(accountNumber + ": Withdrawn $" + amount);
+            System.out.println("Success! Withdrawn: $" + amount);
         } else {
-            System.out.println(accountNumber + ": Insufficient balance.");
+            System.out.println("Error: Insufficient funds.");
         }
     }
 
-    // Method: checkBalance()
     public void checkBalance() {
-        System.out.println(accountNumber + ": Current Balance: $" + balance);
+        System.out.println("Account " + accountNumber + " Balance: $" + balance);
     }
 }
 
-// 2. Child Class: SavingAccount (Demonstrates Inheritance)
+// 2. Savings Class (Min Balance Rule)
 class SavingAccount extends Account {
-    private double minBalance = 500.00; // Specific rule for Savings
+    private double minBalance = 500.00;
 
-    public SavingAccount(String accountNumber, double initialBalance) {
-        super(accountNumber, initialBalance);
+    public SavingAccount(String accNum, double initBal) {
+        super(accNum, initBal);
     }
 
-    // CONCEPT: Method Overriding
-    // Savings accounts cannot drop below a minimum balance
     @Override
     public void withdraw(double amount) {
         if (balance - amount >= minBalance) {
-            balance -= amount; // Direct access because balance is protected
-            System.out.println(accountNumber + " (Savings): Withdrawn $" + amount);
+            balance -= amount;
+            System.out.println("Success! Withdrawn: $" + amount);
         } else {
-            System.out.println(accountNumber + " (Savings): Failed. Balance cannot drop below $" + minBalance);
+            System.out.println("Failed: Savings account must maintain $" + minBalance);
         }
     }
 }
 
-// 3. Child Class: CurrentAccount (Demonstrates Inheritance)
+// 3. Current Class (Overdraft Rule)
 class CurrentAccount extends Account {
-    private double overdraftLimit = 1000.00; // Specific rule for Current
+    private double overdraftLimit = 1000.00;
 
-    public CurrentAccount(String accountNumber, double initialBalance) {
-        super(accountNumber, initialBalance);
+    public CurrentAccount(String accNum, double initBal) {
+        super(accNum, initBal);
     }
 
-    // CONCEPT: Method Overriding
-    // Current accounts allow you to withdraw more than you have (Overdraft)
     @Override
     public void withdraw(double amount) {
         if (balance + overdraftLimit >= amount) {
             balance -= amount;
-            System.out.println(accountNumber + " (Current): Withdrawn $" + amount);
+            System.out.println("Success! Withdrawn: $" + amount);
         } else {
-            System.out.println(accountNumber + " (Current): Failed. Overdraft limit exceeded.");
+            System.out.println("Failed: Overdraft limit exceeded.");
         }
     }
 }
 
-// Main class to run the system
+// 4. Main Class
 public class BankSystem {
     public static void main(String[] args) {
-        System.out.println("=== BANK ACCOUNT SYSTEM ===\n");
+        Scanner scanner = new Scanner(System.in);
+        Account myAccount = null; // Polymorphism: Can hold Savings or Current
 
-        // Create a Saving Account with $1000
-        SavingAccount saver = new SavingAccount("SAV-001", 1000);
-        saver.checkBalance();
-        saver.deposit(200);
-        saver.withdraw(800); // This should fail (would leave $400, min is $500)
-        saver.withdraw(200); // This should pass
-        saver.checkBalance();
+        System.out.println("=== WELCOME TO JAVA BANK ===");
 
-        System.out.println("\n---------------------------\n");
+        // Step 1: Account Setup
+        System.out.print("Enter Account Number (e.g., USER123): ");
+        String accNum = scanner.next();
 
-        // Create a Current Account with $500
-        CurrentAccount current = new CurrentAccount("CUR-001", 500);
-        current.checkBalance();
-        current.withdraw(1000); // This should pass (uses overdraft)
-        current.checkBalance(); // Balance will be negative
-        current.withdraw(5000); // This should fail (exceeds overdraft)
+        System.out.print("Enter Initial Balance: ");
+        double initBal = scanner.nextDouble();
+
+        System.out.println("Choose Account Type:");
+        System.out.println("1. Savings Account (Min Balance $500)");
+        System.out.println("2. Current Account (Overdraft allowed)");
+        int type = scanner.nextInt();
+
+        if (type == 1) {
+            myAccount = new SavingAccount(accNum, initBal);
+        } else {
+            myAccount = new CurrentAccount(accNum, initBal);
+        }
+
+        System.out.println("\nAccount Created Successfully!");
+
+        // Step 2: The "Calculator" Loop
+        boolean running = true;
+        while (running) {
+            System.out.println("\n--- MENU ---");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
+            System.out.print("Select an option: ");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter amount to deposit: ");
+                    double depAmount = scanner.nextDouble();
+                    myAccount.deposit(depAmount);
+                    break;
+                case 2:
+                    System.out.print("Enter amount to withdraw: ");
+                    double withAmount = scanner.nextDouble();
+                    myAccount.withdraw(withAmount);
+                    break;
+                case 3:
+                    myAccount.checkBalance();
+                    break;
+                case 4:
+                    System.out.println("Thank you for banking with us!");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+
+        scanner.close();
     }
 }
