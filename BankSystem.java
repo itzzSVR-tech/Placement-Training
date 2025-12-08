@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// 1. Base Class
 class Account {
     protected String accountNumber;
     protected double balance;
@@ -33,7 +32,6 @@ class Account {
     }
 }
 
-// 2. Savings Class (Min Balance Rule)
 class SavingAccount extends Account {
     private double minBalance = 500.00;
 
@@ -52,7 +50,6 @@ class SavingAccount extends Account {
     }
 }
 
-// 3. Current Class (Overdraft Rule)
 class CurrentAccount extends Account {
     private double overdraftLimit = 1000.00;
 
@@ -71,7 +68,6 @@ class CurrentAccount extends Account {
     }
 }
 
-// 4. Main Class
 public class BankSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
