@@ -1,4 +1,4 @@
-package Day2;
+
 /* 
     `Loops in Java`
     There are 3 kinds of Loops in Java

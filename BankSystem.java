@@ -1,5 +1,5 @@
 // 1. Base Class: Account
-class Account {
+class Account { 
     protected String accountNumber;
     protected double balance;
 

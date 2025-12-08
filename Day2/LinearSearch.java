@@ -1,4 +1,4 @@
-package Day2;
+
 
 public class LinearSearch {
     public static int findElement(int[] array, int target) {

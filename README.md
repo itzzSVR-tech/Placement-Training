@@ -27,6 +27,8 @@
 - [x] Reverse a sentence and not the words in a String
 - [x] Remove Duplicates in a String and print the String without Duplicates
 
+- [ ] Get String from user and reverse only the words and not the sentence
+
 ## Recursion
 
 - [x] Factorial
