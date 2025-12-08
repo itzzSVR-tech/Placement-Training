@@ -1,3 +1,17 @@
+# `OOPS` (Object Oriented Programming System)
+
+There a 5 Pillars in OOPS
+
+- `Classes and Objects`
+
+- `Abstraction`: Hiding complex implementation details and showing only essential features (e.g., driving a car without knowing engine mechanics).
+
+- `Encapsulation`: Bundling data (attributes) and methods (functions) that operate on the data within a single unit (class), controlling access to them (data hiding).
+
+- `Inheritance`: Allowing new classes (child/derived) to acquire properties and behaviors from existing classes (parent/base), promoting code reuse.
+
+- `Polymorphism`: The ability of an object or method to take on many forms (e.g., a single function name doing different things in different contexts). 
+
 # `this` Keyword
 
 The *`this`* keyword in Java is a reference to the current object within a class. There are 5 use cases for the `this` keyword:
@@ -119,4 +133,134 @@ To allow controlled interaction with private data, **public getter and setter me
 
 - *`Modularity and Reusability`*: Encapsulated classes are self-contained units with clearly defined interfaces, making them easier to understand, test, and reuse in different parts of a program or across projects.
 
-- *`Control and Flexibility`*: Provides fine-grained control over how data is accessed and modified, allowing for validation rules and read-only or write-only attributes. 
+- *`Control and Flexibility`*: Provides fine-grained control over how data is accessed and modified, allowing for validation rules and read-only or write-only attributes.
+
+# Inheritance
+
+`Inheritance` is a core principle of `object-oriented programming (OOP)` that allows a **new class** to `inherit properties` (fields and methods) from an ****existing class**. This mechanism promotes code reusability, which saves development time and effort. 
+
+## Types of Inheritance
+
+Different programming languages support various types of inheritance: 
+
+- `Single Inheritance`: A derived class inherits from only one base class. This is the simplest and most common type.
+
+- `Multilevel Inheritance`: A chain of inheritance where a class is derived from another derived class (e.g., Class C inherits from B, which inherits from A).
+- `Hierarchical Inheritance`: Multiple derived classes inherit from a single base class (e.g., both Class B and Class C inherit from Class A).
+
+- `Multiple Inheritance`: A derived class inherits from more than one base class. This is supported in languages like Python and C++, but not in Java (which uses interfaces to achieve similar functionality).
+
+- `Hybrid Inheritance`: A combination of two or more types of inheritance, such as combining hierarchical and multiple inheritance
+
+### Java Single Inheritance
+
+The `inheritance` in which there is only `one base class` and `one derived class` is known as single inheritance. The single (or, single-level) inheritance inherits data from only one base class to only one derived class.
+
+```java
+class One {
+  public void printOne() {
+    System.out.println("printOne() method of One class.");
+  }
+}
+
+public class Main extends One {
+  public static void main(String args[]) {
+    // Creating object of the derived class (Main)
+    Main obj = new Main();
+
+    // Calling method
+    obj.printOne();
+  }
+}
+```
+
+### Java MultiLevel Inheritance
+
+The `inheritance` in which a `base class` is `inherited` to a `derived class` and that `derived class` is further `inherited` to `another derived class` is known as multi-level inheritance. Multilevel inheritance involves multiple base classes.
+
+```java
+lass One {
+  public void printOne() {
+    System.out.println("printOne() method of One class.");
+  }
+}
+
+class Two extends One {
+  public void printTwo() {
+    System.out.println("printTwo() method of Two class.");
+  }
+}
+
+public class Main extends Two {
+  public static void main(String args[]) {
+    // Creating object of the derived class (Main)
+    Main obj = new Main();
+
+    // Calling methods
+    obj.printOne();
+    obj.printTwo();
+  }
+}
+```
+
+### Java Hierarchical Inheritance
+
+The `inheritance` in which only `one base class` and `multiple derived classes` is known as hierarchical inheritance.
+
+```java
+// Base class
+class One {
+  public void printOne() {
+    System.out.println("printOne() Method of Class One");
+  }
+}
+
+// Derived class 1
+class Two extends One {
+  public void printTwo() {
+    System.out.println("Two() Method of Class Two");
+  }
+}
+
+// Derived class 2
+class Three extends One {
+  public void printThree() {
+    System.out.println("printThree() Method of Class Three");
+  }
+}
+
+// Testing CLass
+public class Main {
+  public static void main(String args[]) {
+    Two obj1 = new Two();
+    Three obj2 = new Three();
+
+    //All classes can access the method of class One
+    obj1.printOne();
+    obj2.printOne();
+  }
+}
+```
+
+### Hybrid Inheritance
+
+
+
+# Polymorphism
+
+`Polymorphism` in `OOP (Object-Oriented Programming)` means **"many forms,"** allowing a `single interface or action` to behave differently across various objects, enabling code flexibility and reusability by treating different types of objects the same way through a common reference. It's implemented through concepts like *`method overloading`* (same name, different parameters, compile-time) and *`method overriding`* (same signature in derived classes, runtime), letting objects of related classes (like Dog and Cat from Animal) perform a shared action (like makeSound()) in their own specific ways
+
+- *`One Interface, Many Forms`*: A single function or object can represent multiple behaviors or types, much like a single remote control can operate different devices (TV, DVD player) differently.
+
+- *`Real-World Analogy`*: A person can play multiple roles (mother, employee, friend) depending on the situation, or an actor can play different characters (scientist, police officer, chef). 
+
+### Types of Polymorphism
+
+- `Compile-Time Polymorphism (Static)`: Resolved by the compiler before the program runs.
+    
+    - *Method Overloading*: Defining multiple methods in the same class with the same name but different parameter lists (number, type, or order).
+
+- `Run-Time Polymorphism (Dynamic)`: Decided during execution, often using inheritance.
+
+    - *Method Overriding*: A subclass provides a specific implementation for a method that is already defined in its superclass, accessed through a superclass reference. 
+
